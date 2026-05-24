@@ -1,0 +1,168 @@
+.container {
+  max-width: 600px;
+}
+
+.progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(201, 150, 58, 0.1);
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--crimson);
+  transition: width 0.5s ease;
+}
+
+.stepIndicator {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+/* Global Step Styles */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup.full {
+  grid-column: 1 / -1;
+}
+
+.formGroup label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.input, .select, .textarea {
+  padding: 12px 16px;
+  border: 1px solid rgba(201, 150, 58, 0.2);
+  background: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.actions {
+  margin-top: 48px;
+  display: flex;
+  gap: 16px;
+}
+
+.btnNext, .btnPrev {
+  padding: 16px 32px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btnNext {
+  background: var(--crimson);
+  color: white;
+  flex: 1;
+}
+
+.btnSubmit {
+  padding: 16px 32px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  transition: all 0.3s;
+  background: var(--gold);
+  color: var(--deep);
+  flex: 1;
+}
+
+.btnSubmit:hover:not(:disabled) {
+  background: var(--crimson);
+  color: white;
+}
+
+.stepTitleMain {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  color: var(--deep);
+  margin-bottom: 8px;
+}
+
+.stepTextMain {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+.paymentBox {
+  background: var(--cream);
+  padding: 32px;
+  border: 1px solid rgba(201, 150, 58, 0.2);
+}
+
+.qrWrapper {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.qrPlaceholder {
+  width: 200px;
+  height: 200px;
+  background: white;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--gold);
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+}
+
+.upiId {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.uploadBox {
+  border: 1px dashed rgba(201, 150, 58, 0.4);
+  padding: 20px;
+  text-align: center;
+  background: white;
+}
+
+.uploadBox p {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .formGrid { grid-template-columns: 1fr; }
+}

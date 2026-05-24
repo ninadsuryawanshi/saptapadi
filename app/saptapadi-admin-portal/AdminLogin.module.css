@@ -1,0 +1,114 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--deep);
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 60px 40px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: var(--crimson);
+  margin-bottom: 24px;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--deep);
+  margin-bottom: 12px;
+}
+
+.text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 16px;
+  color: var(--gold);
+}
+
+.input {
+  width: 100%;
+  padding: 14px 14px 14px 48px;
+  border: 1px solid rgba(201, 150, 58, 0.2);
+  background: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: white;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 0.8rem;
+}
+
+.loginBtn {
+  background: var(--crimson);
+  color: white;
+  padding: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+}
+
+.loginBtn:hover:not(:disabled) {
+  background: #6A1020;
+  transform: translateY(-2px);
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.eyeBtn:hover {
+  color: var(--gold);
+}

@@ -1,0 +1,112 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 24px 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+}
+
+.scrolled {
+  padding: 15px 0;
+  background: rgba(251, 246, 238, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 150, 58, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--crimson);
+  letter-spacing: 0.05em;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.link:hover::after, .active::after {
+  width: 100%;
+}
+
+.active {
+  color: var(--crimson);
+}
+
+.cta {
+  background: var(--crimson);
+  color: white;
+  padding: 12px 28px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(139, 26, 44, 0.2);
+}
+
+.mobileToggle {
+  display: none;
+  color: var(--crimson);
+}
+
+.mobileMenu {
+  display: none;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(201, 150, 58, 0.1);
+  padding: 20px 40px;
+}
+
+@media (max-width: 768px) {
+  .links { display: none; }
+  .mobileToggle { display: block; }
+  .mobileMenu { display: block; }
+  .mobileMenu ul { display: flex; flex-direction: column; gap: 20px; }
+  .mobileMenu a { font-size: 1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; }
+  .mobileCta { display: inline-block; background: var(--crimson); color: white; padding: 12px 24px; text-align: center; width: 100%; }
+}
