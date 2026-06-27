@@ -101,6 +101,15 @@ export async function GET(req: Request) {
       query['personal.raas'] = raas;
     }
 
+    // Registration date filtering
+    const registeredWithin = searchParams.get('registeredWithin');
+    if (registeredWithin && registeredWithin !== 'all') {
+      const days = parseInt(registeredWithin);
+      const sinceDate = new Date();
+      sinceDate.setDate(sinceDate.getDate() - days);
+      query['createdAt'] = { $gte: sinceDate };
+    }
+
     // Search filtering (Name or Phone)
     const search = searchParams.get('search');
     if (search) {

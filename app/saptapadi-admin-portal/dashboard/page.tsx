@@ -40,6 +40,7 @@ const AdminDashboard = () => {
     minHeight: 'all',
     maxHeight: 'all',
     minIncome: 'all',
+    registeredWithin: 'all',
   });
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -236,6 +237,18 @@ const AdminDashboard = () => {
                 ))}
               </select>
             </div>
+
+            <div className={styles.filterGroup}>
+              <label>Registered Within</label>
+              <select value={filters.registeredWithin} onChange={(e) => setFilters({...filters, registeredWithin: e.target.value})}>
+                <option value="all">Any Time</option>
+                <option value="1">Last 24 Hours</option>
+                <option value="3">Last 3 Days</option>
+                <option value="7">Last Week</option>
+                <option value="30">Last Month</option>
+                <option value="90">Last 3 Months</option>
+              </select>
+            </div>
           </div>
 
           <button 
@@ -318,7 +331,7 @@ const AdminDashboard = () => {
               <button className={styles.viewBtn} style={{ width: 'auto', marginTop: '20px' }} onClick={() => setFilters({
                 search: '', mangal: 'all', diet: 'all', raas: 'all', 
                 gotra: '', location: '', occupation: '', minAge: '18', maxAge: '60', 
-                minHeight: 'all', maxHeight: 'all', minIncome: 'all'
+                minHeight: 'all', maxHeight: 'all', minIncome: 'all', registeredWithin: 'all'
               })}>Reset All Filters</button>
             </div>
           )}
